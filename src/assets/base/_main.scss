@@ -1,0 +1,98 @@
+
+*:focus, button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn::before,
+.btn::after,
+button::before,
+button::after {
+    content: '';
+    flex: 1 0 auto;
+}
+
+::-ms-clear {
+   display: none;
+}
+
+html, body, #app  {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+header {
+    height: 60px;
+}
+
+section {
+    @include flex-container(column, flex-start, center);
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    &.with-header {
+        height: calc(100% - 60px);
+    }
+}
+
+.form-field {
+    .control {
+        @include flex-container(row, flex-start, center);
+    }
+
+    .delete {
+        opacity: 0;
+    }
+
+    &.value {
+        .control {
+            width: calc(100% - 30px);
+        }
+
+        .delete {
+            opacity: 1;
+            position: absolute;
+            right: -30px;
+        }
+    }
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    @include flex-container(column, flex-start, center);
+    height: 100%;
+    width: 100%;
+}
+
+.login {
+    @include flex-container(column, center, center);
+
+    form {
+        width: 300px;
+    }
+}
+
+h1, p, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+
