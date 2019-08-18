@@ -22,17 +22,10 @@ export default {
         'app-header' : Header,
     },
 
-    data() {
-        return {
-            isHeader: true,
-            isLogged: true,
-        }
-    },
-
     computed: {
         ...mapState({
-            // isHeader: state => state.route.meta.header,
-            // isLogged: state => state.auth.isLogged,
+            isHeader: state => state.route.meta.header,
+            isLogged: state => state.auth.isLogged,
         }),
     },
 };
