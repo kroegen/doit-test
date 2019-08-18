@@ -1,6 +1,5 @@
 import Vue        from 'vue';
 import Router     from 'vue-router';
-import store      from '@/store';
 import LoginPage     from '@/views/Login';
 import LandingPage   from '@/views/Landing';
 
@@ -22,18 +21,6 @@ const router = new Router({
             meta      : { header: false, auth: false },
         },
     ]
-});
-
-router.beforeEach((to, from, next) => {
-    const isLogged = store.state.auth.isLogged;
-
-    if (to.meta.auth && !isLogged) {
-        next({ path: '/login' });
-    } else if (to.name === 'login' && isLogged) {
-        next(false);
-    } else {
-        next();
-    }
 });
 
 export default router;
