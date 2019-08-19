@@ -44,7 +44,7 @@ import { mapGetters } from 'vuex';
 import FormField      from '@/components/common/FormField';
 
 export default {
-    name       : 'LoginPage',
+    name       : 'login',
 
     components : {
         FormField,

@@ -13,5 +13,7 @@ exports.dumpUser = user => {
         email     : user.email,
         createdAt : user.createdAt,
         updatedAt : user.updatedAt,
+        info      : user.info,
+        age       : user.age,
     }
 }
