@@ -10,6 +10,8 @@ const state = {
 
 // getters
 const getters = {
+    isLogged    : state => state.isLogged,
+    profile     : state => state.profile,
 };
 
 // actions

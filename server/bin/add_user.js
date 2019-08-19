@@ -6,7 +6,7 @@ const { docopt }   = require('docopt');
 const User = mongoose.model('UserModel');
 const doc  = [
     'Usage:',
-    '   add_user.js --email=<email> --password=<password> [--name=<name>] [--drop]',
+    '   add_user.js --email=<email> --password=<password> [--name=<name>] [--age=<age>] [--info=<info>}] [--drop]',
     '   add_user.js -h | --help',
     '',
     'Options:',
@@ -22,6 +22,8 @@ const opts = docopt(doc);
 const user = new User({
     status:   'ACTIVE',
     name:     opts['--name'],
+    age:      opts['--age'],
+    info:     opts['--info'],
     email:    opts['--email'] ? opts['--email'] : 'admin@mail.com',
     password: opts['--password']
 });
