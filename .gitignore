@@ -6,6 +6,10 @@ node_modules
 .env.local
 .env.*.local
 
+# env files
+.env
+.env.prod
+
 # Log files
 npm-debug.log*
 yarn-debug.log*
@@ -19,3 +23,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# server config files
+server/bin/config.json

@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import FormField      from '@/components/common/FormField';
 
 export default {
@@ -58,9 +59,17 @@ export default {
     },
 
     watch: {
+        validErrors(value) {
+            if (value) {
+                value.forEach((error) => {
+                    this.errors.add({ field: error.param, msg: error.message });
+                });
+            }
+        },
     },
 
     computed: {
+        ...mapGetters(['validErrors']),
     },
 
     async created() {
@@ -79,6 +88,19 @@ export default {
             this.loading = !this.loading;
         },
 
+        async submit() {
+            try {
+                const payload = {
+                    email: this.email,
+                    password: this.password,
+                };
+
+                await this.$store.dispatch('login', payload);
+            } catch (error) {
+                throw error;
+            }
+        },
+
         async handleSubmit() {
             this.toggleLoader();
 
@@ -89,6 +111,8 @@ export default {
                     this.toggleLoader();
                     return;
                 }
+
+                await this.submit();
 
                 this.toggleLoader();
                 this.$router.push({ name: 'landing' });
