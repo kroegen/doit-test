@@ -16,9 +16,8 @@
                 </a>
 
                 <div :class="['navbar-menu', !showNavbar ? 'is-active' : '']" id="navMenu">
-                    <div class="navbar-start">
-                        <li class="navbar-item"><router-link to="/login">Login Page</router-link></li>
-                        <li class="navbar-item"><router-link to="/">Landing Page</router-link></li>
+                    <div class="navbar-end">
+                        <a class="navbar-item" @click.prevent="handleLogout">Logout</a>
                     </div>
                 </div>
             </div>
@@ -43,6 +42,11 @@ export default {
     methods: {
         handleToggleNav() {
             this.showNavbar = !this.showNavbar;
+        },
+
+        handleLogout() {
+            this.$store.dispatch('logout');
+            this.$router.push({ name: 'login' });
         },
     }
 }
