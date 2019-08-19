@@ -40,6 +40,13 @@ const mutations = {
         state.profile = { ...profile };
         state.isLogged = true;
     },
+
+    LOGOUT(state) {
+        state.isLogged = false;
+        state.profile = null;
+        api.auth.setAuthToken('');
+        localStorage.removeItem('token');
+    },
 };
 
 export default {
