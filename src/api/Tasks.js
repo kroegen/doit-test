@@ -20,7 +20,6 @@ export default class extends Base {
     }
 
     async updateTask(url, payload) {
-        console.log(url, payload);
         const data = await this.apiClient.put(url, payload);
 
         return data;

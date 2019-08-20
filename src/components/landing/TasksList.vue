@@ -68,7 +68,6 @@ export default {
         },
 
         async handleSubmit({ payload, id = null }) {
-            console.log(payload, id);
             this.toggleLoader();
 
             try {
