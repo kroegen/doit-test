@@ -35,10 +35,6 @@ export default {
         };
     },
 
-    computed: {
-        isLogged: () => { return true },
-    },
-
     methods: {
         handleToggleNav() {
             this.showNavbar = !this.showNavbar;

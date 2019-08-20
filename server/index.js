@@ -18,7 +18,7 @@ db.setUpConnection();
 
 app.use(cors({
     origin: '*',
-    methods: 'GET,POST,PATCH,DELETE'
+    methods: 'GET,POST,PUT,DELETE'
 }));
 
 app.use(logger('dev'));

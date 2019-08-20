@@ -16,6 +16,12 @@ const UserSchema = new Schema({
         required: true,
         index: { unique: true },
     },
+    age: {
+        type: String,
+    },
+    info: {
+        type: String,
+    },
     passwordHash: {
         type: String,
         default: '',
