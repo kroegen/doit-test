@@ -7,6 +7,9 @@ const TaskSchema = new Schema({
         type: String,
         default: uuidv4,
     },
+    name: {
+        type: String,
+    },
     content: {
         type: String,
     },

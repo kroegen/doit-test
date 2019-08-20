@@ -1,5 +1,6 @@
 import ApiClient from './ApiClient';
 import AuthAPI   from './Auth';
+import TasksAPI  from './Tasks';
 
 const { VUE_APP_ROOT_API } = process.env;
 
@@ -13,6 +14,7 @@ function apiFactory({ apiPrefix } = {}) {
     return {
         apiClient : api,
         auth      : new AuthAPI({ apiClient: api }),
+        tasks     : new TasksAPI({ apiClient: api }),
     };
 }
 

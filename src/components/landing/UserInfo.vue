@@ -8,17 +8,13 @@
                     </figure>
                 </div>
                 <div class="media-content">
-                    <p v-if="name" class="title is-4">{{name}}</p>
-                    <p v-else class="title is-4">John Smith</p>
-                    <p v-if="email" class="subtitle is-6">@{{email}}</p>
-                    <p v-else class="subtitle is-6">@johnsmith</p>
+                    <p class="title is-4">{{name}}</p>
+                    <p class="subtitle is-6">{{email}}</p>
                 </div>
                 <div class="media-right">
-                    <p v-if="info">
+                    <p>
                         {{info}}, <span v-if="age">{{age}} years</span>
                     </p>
-                    <p v-else>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris.</p>
                 </div>
             </div>
         </div>
@@ -30,21 +26,23 @@ export default {
     name: 'user-info',
 
     props: {
-        name: {
-            type    : String,
-            default : '',
+        profile: {
+            type    : Object,
         },
-        email: {
-            type    : String,
-            default : '',
+    },
+
+    computed: {
+        name() {
+            return this.profile && this.profile.name ? this.profile.name : 'John Smith';
         },
-        info: {
-            type    : String,
-            default : '',
+        email() {
+            return this.profile && this.profile.email ? this.profile.email : 'johnsmith@mail.com';
         },
-        age: {
-            type    : String,
-            default : '',
+        info() {
+            return this.profile && this.profile.info ? this.profile.info : 'Junior Front-end Developer';
+        },
+        age() {
+            return this.profile && this.profile.age ? this.profile.age : '21';
         },
     },
 };

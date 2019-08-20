@@ -1,18 +1,18 @@
 <template>
     <div :class="['wrapper login' , loading ? 'is-waiting' : '']">
         <form class="box" @submit.prevent="handleSubmit()">
-            <form-field
+            <form-input
                 label="Email"
                 placeholder="Type Email"
                 type="email"
                 name="email"
                 autocompleteType="username"
                 :error="errors.first('email')"
-                fieldIcon="envelope"
+                inputIcon="envelope"
                 v-model="email"
-                v-validate="'required|email'"
+                v-validate="'required|email|length:100'"
             />
-            <form-field
+            <form-input
                 label="Password"
                 placeholder="Type Password"
                 name="password"
@@ -21,7 +21,7 @@
                 :error="errors.first('password')"
                 fieldIcon="key"
                 v-model="password"
-                v-validate="'required'"
+                v-validate="'required|length:100'"
             />
             <div class="field is-grouped is-grouped-right">
                 <p class="control">
@@ -41,13 +41,13 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import FormField      from '@/components/common/FormField';
+import FormInput      from '@/components/common/FormInput';
 
 export default {
     name       : 'login',
 
     components : {
-        FormField,
+        FormInput,
     },
 
     data() {
@@ -70,17 +70,6 @@ export default {
 
     computed: {
         ...mapGetters(['validErrors']),
-    },
-
-    async created() {
-        this.toggleLoader();
-
-        try {
-
-            this.toggleLoader();
-        } catch (error) {
-            this.toggleLoader();
-        }
     },
 
     methods: {

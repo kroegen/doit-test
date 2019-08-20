@@ -8,8 +8,6 @@ exports.createSession = async(req, res, next) => {
         const { email, password } = req.body;
         const user = await User.findOne({ email });
 
-        console.log(user);
-
         if (user && user.checkPassword(password)) {
             const token = jwt.sign(utils.dump.dumpUser(user), app.secret, { expiresIn: '1h' });
 
