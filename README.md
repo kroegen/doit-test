@@ -7,7 +7,7 @@ npm install
 
 ### Edit config files (server/bin/config.json and .env)
 ```
-mv server/bin/config.sample.json server/bin/config.json
+mv server/bin/config.json.sample server/bin/config.json
 mv .env.sample .env && cp .env .env.prod
 ```
 
