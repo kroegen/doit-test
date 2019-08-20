@@ -20,3 +20,7 @@ export function isExpired() {
 export function isLogged() {
     return getToken() && !isExpired();
 }
+
+export function getProfile() {
+    return decode(getToken());
+}

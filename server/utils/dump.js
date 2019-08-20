@@ -1,7 +1,8 @@
-exports.dumpTask = post => {
+exports.dumpTask = task => {
     return {
-        id      : post._id,
-        content : post.content,
+        id      : task._id,
+        name    : task.name,
+        content : task.content,
     }
 }
 

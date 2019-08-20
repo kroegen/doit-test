@@ -2,8 +2,8 @@
     <div :class="['field form-field', value && clearIcon ? 'value' : '']">
         <label v-if="label" class="label">{{label}}</label>
         <div :class="{ 'control': true, 'has-icons-left': fieldIcon, 'has-icons-right': error || success }">
-            <input
-                :class="['input', error ? 'is-danger' : '', success ? 'is-success' : '', value ? 'value' : '']"
+            <textarea
+                :class="['textarea', error ? 'is-danger' : '', success ? 'is-success' : '', value ? 'value' : '']"
                 :id="name"
                 :name="name"
                 :type="type"
@@ -13,7 +13,8 @@
                 :disabled="disabled"
                 @input="updateValue($event.target.value, $event.target.name)"
             >
-            <span v-show="fieldIcon" class="icon is-small is-left"><fa-icon :icon="fieldIcon" /></span>
+            </textarea>
+            <span v-if="fieldIcon" class="icon is-small is-left"><fa-icon :icon="fieldIcon" /></span>
             <span v-if="error" class="icon is-small is-right"><fa-icon icon="exclamation-triangle" /></span>
             <span v-else-if="success" class="icon is-small is-right"><fa-icon icon="check" /></span>
             <a v-if="value && clearIcon" class="delete" @click.prevent="updateValue('', $event.target.name)"></a>
@@ -26,7 +27,7 @@
 <script>
 
 export default {
-    name: 'form-field',
+    name: 'form-textarea',
 
     props: {
         label: {

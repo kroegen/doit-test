@@ -1,11 +1,11 @@
 import api          from '@/api';
 import { logError } from '@/utils/errorUtils';
-import { decode, isLogged } from '@/utils/sessionUtils';
+import { decode, isLogged, getProfile } from '@/utils/sessionUtils';
 
 // initial state
 const state = {
     isLogged: isLogged(),
-    profile: null,
+    profile: getProfile(),
 };
 
 // getters
