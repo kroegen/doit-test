@@ -9,7 +9,7 @@
                     type="text"
                     name="name"
                     :error="errors.first('name')"
-                    v-validate="'length:100'"
+                    v-validate="'max:100'"
                     v-model="name"
                 />
                 <form-textarea
@@ -18,7 +18,7 @@
                     name="content"
                     type="text"
                     :error="errors.first('content')"
-                    v-validate="'length:300'"
+                    v-validate="'max:300'"
                     v-model="content"
                 />
                 <div class="field is-grouped is-grouped-right">
@@ -40,7 +40,7 @@
                     type="text"
                     name="name"
                     :error="errors.first('name')"
-                    v-validate="'length:100'"
+                    v-validate="'max:100'"
                     v-model="name"
                 />
                 <form-textarea
@@ -49,7 +49,7 @@
                     name="content"
                     type="text"
                     :error="errors.first('content')"
-                    v-validate="'length:300'"
+                    v-validate="'max:300'"
                     v-model="content"
                 />
                 <div class="field is-grouped is-grouped-right">

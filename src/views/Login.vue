@@ -10,7 +10,7 @@
                 :error="errors.first('email')"
                 inputIcon="envelope"
                 v-model="email"
-                v-validate="'required|email|length:100'"
+                v-validate="'required|email|max:100'"
             />
             <form-input
                 label="Password"
@@ -21,7 +21,7 @@
                 :error="errors.first('password')"
                 fieldIcon="key"
                 v-model="password"
-                v-validate="'required|length:100'"
+                v-validate="'required|max:100'"
             />
             <div class="field is-grouped is-grouped-right">
                 <p class="control">
