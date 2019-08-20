@@ -3,6 +3,7 @@ import Router     from 'vue-router';
 import store      from '@/store';
 import LoginPage     from '@/views/Login';
 import LandingPage   from '@/views/Landing';
+import NotFoundPage  from '@/views/NotFound';
 
 Vue.use(Router);
 
@@ -20,6 +21,10 @@ const router = new Router({
             name      : 'login',
             component : LoginPage,
             meta      : { header: false, auth: false },
+        },
+        {
+            path      : '*',
+            component : NotFoundPage,
         },
     ]
 });
