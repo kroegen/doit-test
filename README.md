@@ -4,6 +4,8 @@
 This test is a full stack app made with vue2 + bulma + axios and express + mongoose.
 A simple login form + validation + todo list with items stored in db on be side
 ```
+![Screenshot2](public/info2.png?raw=true "Screenshot2")
+![Screenshot1](public/info1.png?raw=true "Screenshot1")
 
 ## Project setup
 ```
