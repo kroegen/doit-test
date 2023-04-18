@@ -1,5 +1,10 @@
 # doit-test
 
+```
+This test is a full stack app made with vue2 + bulma + axios and express + mongoose.
+A simple login form + validation + todo list with items stored in db on be side
+```
+
 ## Project setup
 ```
 npm install
